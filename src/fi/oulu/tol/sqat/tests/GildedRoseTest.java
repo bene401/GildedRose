@@ -34,9 +34,59 @@ public class GildedRoseTest {
 		Item itemBrie = items.get(0);
 		assertEquals(11, itemBrie.getQuality());
 	}
-    
+	
+	
+	
 	@Test
+	public void testUpdateEndOfDay_Sulfuras() {
+		GildedRose store = new GildedRose();
+		store.addItem(new Item("Sulfuras, Hand of Ragnaros", 0, 80));
+		
+		// Act
+		store.updateEndOfDay();
+				
+		// Assert
+		List<Item> items = store.getItems();
+		Item itemBrie = items.get(0);
+		assertEquals(80, itemBrie.getQuality());
+		
+	}
+	
+	@Test
+	public void testUpdateEndOfDay_Elixier() {
+		GildedRose store = new GildedRose();
+		store.addItem(new Item("Elixir of the Mongoose", 5, 7));
+		
+		// Act
+		store.updateEndOfDay();
+				
+		// Assert
+		List<Item> items = store.getItems();
+		Item itemBrie = items.get(0);
+		assertEquals(6, itemBrie.getQuality());
+		
+	}
+	
+	@Test
+	public void testUpdateEndOfDay_Conjured() {
+		GildedRose store = new GildedRose();
+		store.addItem(new Item("Conjured Mana Cake", 3, 6));
+		
+		// Act
+		store.updateEndOfDay();
+				
+		// Assert
+		List<Item> items = store.getItems();
+		Item itemBrie = items.get(0);
+		assertEquals(4, itemBrie.getQuality());
+		
+	}
+	
+	
+	
+	
+	/*@Ignore
 	public void testUpdateEndOfDay() {
 		fail("Test not implemented");
-	}
+	}*/
 }
