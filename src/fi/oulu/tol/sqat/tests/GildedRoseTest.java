@@ -156,43 +156,61 @@ public class GildedRoseTest {
 		
 	}
 	
+	
+	
 	@Test
-	public void testUpdateEndOfDay_BackstagePasses10() {
+	public void testUpdateEndOfDay_BackstagePasses() {
 		GildedRose store = new GildedRose();
-		store.addItem(new Item("Backstage passes, Aged Brie", 10, 10));
+		store.addItem(new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20));
 		
 		// Act
 		store.updateEndOfDay();
 				
 		// Assert
 		List<Item> items = store.getItems();
-		Item itemExample = items.get(0);
-		assertEquals(12, itemExample.getQuality());
+		Item backst = items.get(0);
+		assertEquals(21, backst.getQuality());
 		
 	}
 	
 	@Test
 	public void testUpdateEndOfDay_BackstagePasses5() {
 		GildedRose store = new GildedRose();
-		store.addItem(new Item("Backstage passes, Aged Brie", 5, 10));
+		store.addItem(new Item("Backstage passes to a TAFKAL80ETC concert", 5, 20));
 		
 		// Act
 		store.updateEndOfDay();
 				
 		// Assert
 		List<Item> items = store.getItems();
-		Item agedBri = items.get(0);
-		assertEquals(13, agedBri.getQuality());
+		Item backst = items.get(0);
+		assertEquals(23, backst.getQuality());
 		
 	}
-	
-	
-	
-		
-	
 	
 	@Test
+	public void testUpdateEndOfDay_BackstagePasses10() {
+		GildedRose store = new GildedRose();
+		store.addItem(new Item("Backstage passes to a TAFKAL80ETC concert", 10, 20));
+		
+		// Act
+		store.updateEndOfDay();
+				
+		// Assert
+		List<Item> items = store.getItems();
+		Item backst = items.get(0);
+		assertEquals(22, backst.getQuality());
+		
+	}
+
+	
+	
+	
+		
+	
+	
+	/*@Test
 	public void testUpdateEndOfDay() {
 		fail("Test not implemented");
-	}
+	}*/
 }
