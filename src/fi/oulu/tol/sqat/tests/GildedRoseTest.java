@@ -191,8 +191,8 @@ public class GildedRoseTest {
 		
 	
 	
-	/*@Ignore
+	@Test
 	public void testUpdateEndOfDay() {
 		fail("Test not implemented");
-	}*/
+	}
 }
